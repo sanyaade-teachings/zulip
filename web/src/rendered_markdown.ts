@@ -353,4 +353,10 @@ export const update_elements = ($content: JQuery): void => {
                 $inline_img_thumbnail.attr("src")!.replace(/\/[^/]+$/, "/" + thumbnail_name),
             );
         });
+
+    $content
+        .find("div.message_inline_image img, div.message_inline_image video")
+        .each(function (): void {
+            parse_media_data(this);
+        });
 };

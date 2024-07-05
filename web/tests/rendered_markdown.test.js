@@ -142,6 +142,11 @@ const get_content_element = () => {
         'div.message_inline_image > a > img[src^="/user_uploads/thumbnail/"]',
         $array([]),
     );
+    $content.set_find_results(
+        "div.message_inline_image img, div.message_inline_image video",
+        $array([]),
+    );
+
     set_message_for_message_content($content, undefined);
 
     // Fend off dumb security bugs by forcing devs to be
