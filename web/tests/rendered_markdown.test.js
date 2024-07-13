@@ -138,6 +138,10 @@ const get_content_element = () => {
     $content.set_find_results("div.spoiler-header", $array([]));
     $content.set_find_results("div.codehilite", $array([]));
     $content.set_find_results(".message_inline_video video", $array([]));
+    $content.set_find_results(
+        'div.message_inline_image > a > img[src^="/user_uploads/thumbnail/"]',
+        $array([]),
+    );
     set_message_for_message_content($content, undefined);
 
     // Fend off dumb security bugs by forcing devs to be
